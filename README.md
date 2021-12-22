@@ -44,3 +44,19 @@ ng g m template --routing
 ```sh
 ng g m reactive --routing
 ```
+
+## Reactive Components
+
+```sh
+ng g c reactive/basicos --skip-tests -is
+ng g c reactive/dinamicos --skip-tests -is
+ng g c reactive/switches --skip-tests -is
+```
+
+## Template Components
+
+```sh
+ng g c template/basicos --skip-tests -is
+ng g c template/dinamicos --skip-tests -is
+ng g c template/switches --skip-tests -is
+```
