@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Shared module
+
+```sh
+ng g m shared
+ng g c shared/sidemenu --skip-tests -is
+```
+
+## Template form with routing
+
+```sh
+ng g m template --routing
+```
+
+## Reactive form with routing
+
+```sh
+ng g m reactive --routing
+```
