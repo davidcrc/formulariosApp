@@ -60,3 +60,7 @@ ng g c template/basicos --skip-tests -is
 ng g c template/dinamicos --skip-tests -is
 ng g c template/switches --skip-tests -is
 ```
+
+### NOTA
+
+- Viewchild we can handle form and validations
