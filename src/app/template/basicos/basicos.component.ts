@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class BasicosComponent {
   @ViewChild('miFormulario') miFormulario!: NgForm;
+  precioMinimo: number = 0;
 
   constructor() {}
 
@@ -20,6 +21,13 @@ export class BasicosComponent {
     return (
       this.miFormulario?.controls['producto']?.invalid &&
       this.miFormulario?.controls['producto']?.touched
+    );
+  }
+
+  precioValido() {
+    return (
+      this.miFormulario?.controls['precio']?.invalid &&
+      this.miFormulario?.controls['precio']?.touched
     );
   }
 }
