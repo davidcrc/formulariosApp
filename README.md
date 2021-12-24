@@ -65,3 +65,23 @@ ng g c template/switches --skip-tests -is
 
 - Viewchild we can handle form and validations
 - Seccion16 - Video 12 - Directiva personalizada para Template form
+
+## Finish section 16
+
+- Template driven
+
+- ViewChild
+
+- Two way databinding
+
+- Formularios dinámicos
+
+- Checks, radios y switches
+
+- Directivas personalizadas - Nota: este tema se cubre a profundidad después en una sección especializada
+
+- Manejo del formulario y validaciones
+
+- Encapsular módulos y scope de los mismos
+
+<!-- ================================================================ -->
