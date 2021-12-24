@@ -8,7 +8,17 @@ interface MenuItem {
 @Component({
   selector: 'app-sidemenu',
   templateUrl: './sidemenu.component.html',
-  styles: [],
+  styles: [
+    `
+      li {
+        cursor: pointer;
+      }
+
+      li:hover {
+        background-color: #eff2f5;
+      }
+    `,
+  ],
 })
 export class SidemenuComponent {
   templateMenu: MenuItem[] = [
