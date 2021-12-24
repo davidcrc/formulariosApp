@@ -48,14 +48,25 @@
 
     <!-- REVIEW: Caja de [(bananas)] crea una referencia a la variable -->
     <div class="col-sm-9">
-      <input
+      <div
+        class="input-group mb-1"
         *ngFor="let juego of persona.favoritos; let i = index"
-        type="text"
-        [(ngModel)]="juego.nombre"
-        name="favorito_{{ i }}"
-        class="form-control mb-1"
-        required
-      />
+      >
+        <input
+          type="text"
+          [(ngModel)]="juego.nombre"
+          name="favorito_{{ i }}"
+          class="form-control"
+          required
+        />
+        <button
+          class="btn btn-outline-danger"
+          type="button"
+          (click)="eliminar(i)"
+        >
+          Eliminar
+        </button>
+      </div>
     </div>
   </div>
 
