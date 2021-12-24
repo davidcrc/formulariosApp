@@ -64,3 +64,4 @@ ng g c template/switches --skip-tests -is
 ### NOTA
 
 - Viewchild we can handle form and validations
+- Seccion16 - Video 12 - Directiva personalizada para Template form
