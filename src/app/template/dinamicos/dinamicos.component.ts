@@ -16,6 +16,8 @@ interface Persona {
   styles: [],
 })
 export class DinamicosComponent {
+  nuevoJuego: string = '';
+
   persona: Persona = {
     nombre: 'Persona',
     favoritos: [
@@ -31,6 +33,16 @@ export class DinamicosComponent {
   };
   guardar() {
     console.log('guardar');
+  }
+
+  agregarJuego() {
+    const nuevoFavorito: Favorito = {
+      id: this.persona.favoritos.length + 1,
+      nombre: this.nuevoJuego,
+    };
+
+    this.persona.favoritos.push({ ...nuevoFavorito });
+    this.nuevoJuego = '';
   }
 
   eliminar(index: number) {
