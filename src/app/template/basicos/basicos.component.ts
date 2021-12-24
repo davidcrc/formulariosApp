@@ -10,11 +10,25 @@ export class BasicosComponent {
   @ViewChild('miFormulario') miFormulario!: NgForm;
   precioMinimo: number = 0;
 
+  // Establecer valores por defecto al form
+  // utilizando el ngModel
+  initForm = {
+    producto: 'Grafica moderna',
+    precio: 10,
+    existencias: 5,
+  };
+
   constructor() {}
 
   // guardar(miFormulario: NgForm) {
   guardar() {
     console.log(this.miFormulario.value);
+
+    // Resetear forms
+    this.miFormulario.resetForm({
+      precio: 0,
+      existencias: 0,
+    });
   }
 
   nombreValido() {
