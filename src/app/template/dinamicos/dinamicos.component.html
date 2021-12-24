@@ -11,7 +11,7 @@
         class="form-control"
         placeholder="Nombre de la persona"
         name="nombre"
-        ngModel
+        [ngModel]="persona.nombre"
         required
       />
       <span
@@ -46,12 +46,16 @@
   <div class="mb-3 row">
     <label class="col-sm-3 col-form-label">Favoritos</label>
 
+    <!-- REVIEW: Caja de [(bananas)] crea una referencia a la variable -->
     <div class="col-sm-9">
-      <input type="text" class="form-control mb-1" />
-      <input type="text" class="form-control mb-1" />
-      <input type="text" class="form-control mb-1" />
-      <input type="text" class="form-control mb-1" />
-      <input type="text" class="form-control mb-1" />
+      <input
+        *ngFor="let juego of persona.favoritos; let i = index"
+        type="text"
+        [(ngModel)]="juego.nombre"
+        name="favorito_{{ i }}"
+        class="form-control mb-1"
+        required
+      />
     </div>
   </div>
 
@@ -68,3 +72,40 @@
     </div>
   </div>
 </form>
+
+<div class="row">
+  <div class="col">
+    <span>FormData</span>
+    <pre>
+      {{ persona | json }}
+    </pre>
+
+    <span>Valid</span>
+    <pre>
+      {{ miFormulario.valid }}
+      </pre
+    >
+
+    <span>Pristine</span>
+    <pre>
+      {{ miFormulario.pristine }}
+      </pre
+    >
+
+    <span>Touched</span>
+    <pre>
+      {{ miFormulario.touched }}
+      </pre
+    >
+
+    <span>Value</span>
+    <pre>
+      {{ miFormulario.value | json }}
+    </pre>
+
+    <span>CustomDirective</span>
+    <pre>
+      {{ miFormulario.controls["existencias"]?.errors | json }}
+    </pre>
+  </div>
+</div>
