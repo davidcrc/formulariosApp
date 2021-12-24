@@ -12,8 +12,11 @@
         <input
           class="form-check-input"
           type="radio"
+          value="M"
+          [(ngModel)]="persona.genero"
           name="radioGenero"
           id="radioMasculino"
+          required
         />
         <label class="form-check-label" for="radioMasculino"> Masculino </label>
       </div>
@@ -21,8 +24,11 @@
         <input
           class="form-check-input"
           type="radio"
+          value="F"
+          [(ngModel)]="persona.genero"
           name="radioGenero"
           id="radioFemenino"
+          required
         />
         <label class="form-check-label" for="radioFemenino"> Femenino </label>
       </div>
@@ -32,14 +38,16 @@
   <!-- Switch -->
 
   <div class="row mb-3">
-    <label for="" class="col-sm-3 control-form-label"></label>
+    <label for="" class="col-sm-3 control-form-label">Notificaciones</label>
 
     <div class="col-sm-9">
-      <div class="form-check form-switch">
+      <div class="form-check form-switch mt-1">
         <input
           class="form-check-input"
           type="checkbox"
           id="flexSwitchCheckChecked"
+          name="notificaciones"
+          [(ngModel)]="persona.notificaciones"
         />
         <label class="form-check-label" for="flexSwitchCheckChecked"
           >Quiere recibir notificaciones</label
@@ -54,7 +62,14 @@
 
     <div class="col-sm-9">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexCheckDefault"
+          name="terminosCondiciones"
+          [(ngModel)]="terminosCondiciones"
+          required
+        />
         <label class="form-check-label" for="flexCheckDefault">
           Terminos y condiciones de uso
         </label>
@@ -65,7 +80,32 @@
   <!-- Boton submit -->
   <div class="row">
     <div class="col">
-      <button type="submit" class="btn btn-primary float-end">Guardar</button>
+      <button
+        type="submit"
+        class="btn btn-primary float-end"
+        [disabled]="miforMulario.invalid"
+      >
+        Guardar
+      </button>
     </div>
   </div>
 </form>
+
+<h5>Valor formulario</h5>
+<pre>
+  {{ miforMulario.value | json }}
+</pre>
+
+<br />
+
+<h5>Valid</h5>
+{{ miforMulario.valid }}
+
+<h5>Termino</h5>
+{{ miforMulario.controls["terminosCondiciones"]?.errors | json }}
+
+<br />
+<br />
+<pre>
+  Condiciones: 
+</pre>
