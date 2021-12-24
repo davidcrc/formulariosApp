@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dinamicos.component.html',
   styles: [],
 })
-export class DinamicosComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class DinamicosComponent {
+  guardar() {
+    console.log('guardar');
+  }
 }
